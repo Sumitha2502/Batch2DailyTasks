@@ -106,6 +106,99 @@ let addition1=()=>{
 }
 addition1(numArray1);
 
-console.log("Return all the prime numbers in an array:")
-console.log("Using anonymous function")
+//console.log("Return all the prime numbers in an array:")
+//console.log("Using anonymous function")
 //anonymous function
+
+let primeNumber=[1,2,3,4,5,6,7,8,9,10,11]
+let findPrimeNum=function(){
+    let result=""
+    for(let i=0;i<primeNumber.length;i++){
+        let flag=0;
+        for(let j=1;j<primeNumber[i];j++){
+            if(primeNumber[i]%j===0){
+                flag++;
+            }
+        }
+        if(flag==1){
+            result+=primeNumber[i]+" "
+        }
+    }
+    console.log("Prime Numbers using anonymous function:",result)
+}
+findPrimeNum(primeNumber);
+
+//Using IIFE:
+
+(function(primeNum){
+    let res=""
+    for(let i=0;i<primeNum.length;i++){
+        flag=0;
+        for(j=1;j<primeNum[i];j++){
+            if(primeNum[i]%j===0){
+                flag++;
+            }
+        }
+        if(flag==1){
+            res+=primeNum[i]+" "
+        }
+    }
+console.log("prime nos using IIFE function:",res)
+})([11,12,13,14,15,16,17,18,19,20]);
+
+//Arrow function
+
+let arrNum=[21,2,23,25,28,27]
+let primeNo=()=>{
+    let primeNumberInArray=""
+    for(let i=0;i<arrNum.length;i++){
+        let flag=0;
+        for(let j=1;j<arrNum[i];j++){
+            if(arrNum[i]%j===0){
+                flag++;
+            }
+        }
+        if(flag==1){
+            primeNumberInArray+=arrNum[i]+" "
+        }
+    }
+    console.log(primeNumberInArray)
+}
+primeNo(arrNum);
+
+
+//console.log("Return all the palindromes in an array:")
+//Anonymous function:
+
+let arrStr=["madam","abccba","formal","456654"]
+let palindrome=function(){
+let len=arrStr.length/2;
+for(let i=0;i<len;i++){
+    if(arrStr[i]!==len-1-i){
+        console.log("Not a pallindrome")
+    }
+}
+console.log(arrStr)
+}
+palindrome(arrStr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
