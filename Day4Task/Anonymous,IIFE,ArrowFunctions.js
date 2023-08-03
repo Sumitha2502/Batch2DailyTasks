@@ -182,14 +182,63 @@ console.log(arrStr)
 }
 palindrome(arrStr);
 
+//IIFE
 
+(function(){
+    var string =("car","racecar");
+    var len=string.length;
+    for(var i=0;i<len/2;i++){
+        if(string[i] !=string[len-1-i]){
+            return  "It is not a palindrome";
+        }
+    }
+    console.log([string + " " +"is a palindrome"]);
+})();
 
+//Arrow function
 
+const shortpalindromes=(words)=>words.filter((word)=>word.split("").reverse().join("")===word);
+console.log(shortpalindromes(["civic","pens","pencil"]));
 
+//Return median of two sorted arrays of the same size.
 
+const findmediansortedarrays=(num1,num2)
+    let compare=(i,j)
+        return i-j;
+    
+    let arrs=nums1.concat(nums2).sort(compare);
+    if(arrs.length%2===0){
+        return(arrs[arrs.length/2-1]+arrs[arrs.length/2])/2;
+    }
+        return arrs[Math.floor(arrs.length/2)];
 
+//Remove duplicates from an array
 
+( function(){
+    const amarArray = [1, 1, 2, 3, 4, 5, 5]
+    
+    const amarArrayWithoutDuplicates = [...new Set(amarArray)]
+    
+    let duplicates = [...amarArray]
+    amarArrayWithoutDuplicates.forEach((item) => {
+      const i = duplicates.indexOf(item)
+      duplicates = duplicates
+        .slice(0, i)
+        .concat(duplicates.slice(i + 1, duplicates.length))
+    })
+    
+    console.log(duplicates);
+    }) () ;
 
+//Rotate an array by k times
+
+var nums=[89654];
+var rotate = function(nums, k) {
+    for (let i = 0; i < k; i++) {
+        nums.unshift(nums.pop()) 
+    }
+    return nums;
+}
 
 
 
